@@ -23,12 +23,12 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         
         cell.titleLabel!.text = title
         cell.SynopsisLabel.text = synopsis
+    
+        let posterPathString = movie["poster_path"] as! String
+        let baseURLString = "https://image.tmdb.org/t/p/w500"
+        let posterURL = URL(string: baseURLString + posterPathString)
         
-        let baseUrl = "https://image.tmbd.org/t/p/w185"
-        let posterpath = movie["poster_path"] as! String
-        let posterUrl = URL(string: baseUrl + posterpath)
-        
-        cell.PosterView.af_setImage(withURL: posterUrl!)
+        cell.PosterView.af_setImage(withURL: posterURL!)
         return cell
     }
     
@@ -41,7 +41,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.delegate = self
         
         // Do any additional setup after loading the view.
-        print("hello")
+        //print("hello")
         
         let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
