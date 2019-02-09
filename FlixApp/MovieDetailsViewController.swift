@@ -35,7 +35,7 @@ class MovieDetailsViewController: UIViewController {
         
         posterView.af_setImage(withURL: posterURL!)
         
-        let backdropPath = movie["poster_path"] as! String
+        let backdropPath = movie["backdrop_path"] as! String
         let backdropURL = URL(string: "https://image.tmdb.org/t/p/w780" + backdropPath)
         
         backdropView.af_setImage(withURL: backdropURL!)
