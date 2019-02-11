@@ -33,7 +33,9 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     @IBOutlet var tableView: UITableView!
+    
     var movies = [[String:Any]]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
